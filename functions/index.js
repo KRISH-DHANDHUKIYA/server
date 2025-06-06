@@ -1,7 +1,7 @@
 // create a server :
 const express = require("express");
 const cors = require("cors");//
-const userRoutes = require("./routes/use_routes");
+const userRoutes = require("../routes/use_routes");
 const app = express();
 
 app.use(cors());
