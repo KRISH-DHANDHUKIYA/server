@@ -8,9 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/", userRoutes)
+app.use("/.netlify/functions/index", userRoutes)
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.send("success");
 });
 
