@@ -1,6 +1,7 @@
 // create a server :
 const express = require("express");
-const cors = require("cors");//
+const cors = require("cors");
+const serverless = require('serverless-http')
 const userRoutes = require("../routes/use_routes");
 const app = express();
 
@@ -13,16 +14,15 @@ app.get('/home', (req, res) => {
     res.send("success");
 });
 
-app.listen(5000, () => {
-    console.log("Server is running on port 5000!");
-});
+
+module.exports.handler= serverless(app)
 
 
 
 
 //json.stingify:
-console.log(JSON.stringify({ x: 5, y: 6 }))
+// console.log(JSON.stringify({ x: 5, y: 6 }))
 
-console.log(JSON.stringify([new Number(8), new String("false"), new Boolean(false)]));
+// console.log(JSON.stringify([new Number(8), new String("false"), new Boolean(false)]));
 
-console.log(JSON.stringify({ x: [10, undefined, function () { }, Symbol("")] }))
+// console.log(JSON.stringify({ x: [10, undefined, function () { }, Symbol("")] }))
